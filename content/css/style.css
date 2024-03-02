@@ -3557,6 +3557,12 @@ body.custom-background {
 	margin-bottom: 10px;
 }
 
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 .header__logo {
 	display: flex;
 	align-items: center;
@@ -3597,4 +3603,83 @@ body.custom-background {
 .error h2 {
 	font-size: 30px;
 	font-weight: 500;
+}
+
+.header__btn {
+	width: 30px;
+	height: 20px;
+	background: none;
+	display: block;
+	border: none;
+	position: relative;
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+}
+
+.mob {
+	background-color: #fff;
+	margin: 0 20px;
+	padding: 15px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 70px;
+	z-index: 2;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: 0.3s ease 0s;
+	transform: translate(0, -15px);
+}
+
+.active .mob {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transform: translate(0, 0);
+}
+
+.mob__menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.mob a {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.mob a:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+@media (min-width: 700px) {
+	.header__btn {
+		display: none;
+	}
+
+	.mob {
+		display: none;
+	}
+}
+
+
+.header__btn span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	margin-top: -1px;
+	background: #fff;
+	height: 2px;
+}
+
+.header__btn {
+	transition: opacity 0.3s ease 0s;
+}
+
+.active .header__btn {
+	opacity: 0.5;
 }
